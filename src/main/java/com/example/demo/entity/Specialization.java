@@ -15,7 +15,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-@Table(name="specilization_tab")
+@Table(name="specialization_tab")
 public class Specialization {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
