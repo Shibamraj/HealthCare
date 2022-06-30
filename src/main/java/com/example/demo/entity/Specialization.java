@@ -22,13 +22,22 @@ public class Specialization {
 	@Column(name="spec_id_col")
 	private long id;
 	
-	@Column(name="spec_code_col")
+	@Column(name="spec_code_col",
+			length=10,
+			nullable=false ,
+			unique=true)
 	private String code;
 	
-	@Column(name="spec_name_col")
+	@Column(name="spec_name_col" ,
+			length=10 ,
+			nullable=false,
+			unique=true)
 	private String name;
 	
-	@Column(name="spec_note_col")
+	@Column(name="spec_note_col",
+			length=10 ,
+			nullable=false,
+			unique=true)
 	private String note;
 
 }
