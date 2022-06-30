@@ -6,6 +6,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import com.example.demo.Controller.SpecializationController;
 import com.example.demo.entity.Specialization;
 @Service
 public interface SpecializationService {
@@ -16,4 +17,7 @@ public interface SpecializationService {
 	public void removeSpecialization(long id);
 	public Specialization getSpecialization(long id);
 	public void updateSpecialization(Specialization spec);
+	
+	
+	
 }

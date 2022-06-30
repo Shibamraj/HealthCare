@@ -10,7 +10,7 @@ import com.example.demo.Service.SpecializationService;
 import com.example.demo.entity.Specialization;
 import com.example.demo.repository.SpecializationRepository;
 
-@Service
+
 public  class SpecializationServiceImpl implements SpecializationService {
 
 	@Autowired
