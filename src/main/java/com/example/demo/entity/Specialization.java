@@ -7,37 +7,33 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.GeneratorType;
+import org.hibernate.metamodel.model.domain.IdentifiableDomainType;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@NoArgsConstructor
-@AllArgsConstructor
 @Data
-@Table(name="specialization_tab")
+@AllArgsConstructor
+
+@Table(name="Spec_tab")
 public class Specialization {
+	
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="spec_id_col")
-	private long id;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="Spec_id", length = 10, nullable = false, unique = true)
+	private long SpecId;
 	
-	@Column(name="spec_code_col",
-			length=10,
-			nullable=false ,
-			unique=true)
-	private String code;
+	@Column(name="Spec_code", length=30, nullable=false, unique=true)
+	private String SpecCode;
 	
-	@Column(name="spec_name_col" ,
-			length=10 ,
-			nullable=false,
-			unique=true)
-	private String name;
+	@Column(name="Spec_addr", length=20, nullable=false, unique=true)
+	 private String SpecAddress;
+
+
 	
-	@Column(name="spec_note_col",
-			length=10 ,
-			nullable=false,
-			unique=true)
-	private String note;
+	
 
 }
