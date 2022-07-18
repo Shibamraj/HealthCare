@@ -7,7 +7,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.example.demo.Service.ISpecializationService;
@@ -80,13 +82,18 @@ model.addAttribute("spec",spec);
 	return "redirect:all";
 	}
 	
+	@GetMapping("/check")
+	@ResponseBody
 	
-	public String specCodeCheck(@RequestParam String SpecCode)
+	public String specCodeCheck(@RequestParam String SpecCode, @RequestParam Integer id)
 	{
 		String message="";
-		if(service.isSpecCodeExist(SpecCode))
+		if(id==0&&service.isSpecCodeExist(SpecCode))
 		{
 			message=SpecCode+"Already Present";
+		}else if(id!=0 && service.isSpecCodeExistEdit(SpecCode, id))
+		{
+			message=SpecCode+"Already Exist";
 		}
 		
 		return "message";

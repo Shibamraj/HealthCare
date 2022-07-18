@@ -51,4 +51,15 @@ return null;
 		
 	}
 
+	@Override
+	public boolean isSpecCodeExist(String SpecCode) {
+		return repo.getSpecCode(SpecCode)>0;
+	}
+
+	@Override
+	public boolean isSpecCodeExistEdit(String SpecCode, Integer id) {
+		
+		return repo.getSpecCodeEdit(SpecCode, id)>0;
+	}
+
 }
